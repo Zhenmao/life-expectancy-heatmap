@@ -1,0 +1,254 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img,
+picture,
+svg,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+:root {
+  --size-000: -0.5rem;
+  --size-00: -0.25rem;
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 1rem;
+  --size-4: 1.25rem;
+  --size-5: 1.5rem;
+  --size-6: 1.75rem;
+  --size-7: 2rem;
+  --size-8: 3rem;
+  --size-9: 4rem;
+  --size-10: 5rem;
+  --size-11: 7.5rem;
+  --size-12: 10rem;
+  --size-13: 15rem;
+  --size-14: 20rem;
+  --size-15: 30rem;
+
+  --font-weight-1: 100;
+  --font-weight-2: 200;
+  --font-weight-3: 300;
+  --font-weight-4: 400;
+  --font-weight-5: 500;
+  --font-weight-6: 600;
+  --font-weight-7: 700;
+  --font-weight-8: 800;
+  --font-weight-9: 900;
+  --font-lineheight-00: 0.95;
+  --font-lineheight-0: 1.1;
+  --font-lineheight-1: 1.25;
+  --font-lineheight-2: 1.375;
+  --font-lineheight-3: 1.5;
+  --font-lineheight-4: 1.75;
+  --font-lineheight-5: 2;
+  --font-letterspacing-0: -0.05em;
+  --font-letterspacing-1: 0.025em;
+  --font-letterspacing-2: 0.05em;
+  --font-letterspacing-3: 0.075em;
+  --font-letterspacing-4: 0.15em;
+  --font-letterspacing-5: 0.5em;
+  --font-letterspacing-6: 0.75em;
+  --font-letterspacing-7: 1em;
+  --font-size-00: 0.5rem;
+  --font-size-0: 0.75rem;
+  --font-size-1: 1rem;
+  --font-size-2: 1.1rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1.5rem;
+  --font-size-5: 2rem;
+  --font-size-6: 2.5rem;
+  --font-size-7: 3rem;
+  --font-size-8: 3.5rem;
+
+  --gray-0: #f8f9fa;
+  --gray-1: #f1f3f5;
+  --gray-2: #e9ecef;
+  --gray-3: #dee2e6;
+  --gray-4: #ced4da;
+  --gray-5: #adb5bd;
+  --gray-6: #868e96;
+  --gray-7: #495057;
+  --gray-8: #343a40;
+  --gray-9: #212529;
+  --gray-10: #16191d;
+  --gray-11: #0d0f12;
+  --gray-12: #030507;
+
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+  --inner-shadow-highlight: inset 0 -0.5px 0 0 #fff, inset 0 0.5px 0 0 #0001;
+  --shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) /
+        calc(var(--shadow-strength) + 9%));
+  --shadow-2: 0 3px 5px -2px hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+}
+
+body {
+  font-family: "Roboto Mono", serif;
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-4);
+  line-height: var(--font-lineheight-3);
+  color: var(--gray-9);
+}
+
+body > * + * {
+  margin-block-start: var(--size-7);
+}
+
+h1 {
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-6);
+  line-height: var(--font-lineheight-0);
+}
+
+header,
+footer {
+  --container-max: 48rem;
+}
+
+main {
+  --container-max: 64rem;
+}
+
+header,
+main,
+footer {
+  width: min(100% - var(--size-5) * 2, var(--container-max));
+  margin-inline: auto;
+  margin-block: var(--size-7);
+}
+
+header {
+  text-align: center;
+}
+
+header > * + * {
+  margin-top: var(--size-3);
+}
+
+footer {
+  color: var(--gray-7);
+  font-size: var(--font-size-0);
+}
+
+.color-legend {
+  max-width: 30rem;
+  margin-inline: auto;
+}
+
+.color-legend > svg {
+  overflow: visible;
+}
+
+.color-legend .tick line {
+  stroke: var(--gray-6);
+}
+
+.color-legend .tick text {
+  font-size: var(--font-size-0);
+}
+
+.heatmap {
+  margin-inline: auto;
+  display: grid;
+  grid-template-areas: "stack";
+  place-content: center;
+  position: relative;
+}
+
+.heatmap > svg,
+.heatmap > canvas {
+  grid-area: stack;
+  overflow: visible;
+}
+
+.heatmap text {
+  font-size: var(--font-size-0);
+}
+
+.heatmap .group-label {
+  text-transform: uppercase;
+}
+
+.heatmap .tick line,
+.heatmap .tick path {
+  stroke: var(--gray-6);
+}
+
+.heatmap .focus {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+.heatmap .focus.visible {
+  opacity: 1;
+}
+
+.line-chart {
+  margin-top: var(--size-2);
+}
+
+.line-chart > svg {
+  overflow: visible;
+}
+
+.line-chart text {
+  font-size: var(--font-size-0);
+}
+
+.line-chart .tick line {
+  stroke: var(--gray-6);
+}
+
+.line-chart .line-path {
+  stroke-linejoin: round;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(90%, 30rem);
+  background-color: #fff;
+  pointer-events: none;
+  box-shadow: var(--shadow-2);
+  border: 1px solid var(--gray-1);
+  padding: var(--size-2) var(--size-3);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.1s linear, opacity 0.1s linear;
+}
+
+.tooltip.visible {
+  visibility: visible;
+  opacity: 1;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Expectancy Heatmap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Life Expectancy, 1950–2023</h1>
+      <div>
+        <div>The period life expectancy at birth, in a given year</div>
+        <div id="colorLegend"></div>
+      </div>
+    </header>
+    <main>
+      <div id="heatmap">
+        <div id="tooltip" class="tooltip">
+          <div>Country or Area: <span id="tooltipCountry"></span></div>
+          <div>SubRegion: <span id="tooltipSubRegion"></span></div>
+          <div>Region: <span id="tooltipRegion"></span></div>
+          <div id="lineChart"></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p
+        >Mortality data sources:
+        <a href="https://www.mortality.org/Data/ZippedDataFiles" target="_blank"
+          >Human Mortality Database (2024)UN</a
+        >,
+        <a href="https://population.un.org/wpp/Download/" target="_blank"
+          >World Population Prospects (2024)</a
+        >
+        – processed by
+        <a href="https://ourworldindata.org/life-expectancy" target="_blank"
+          >Our World in Data</a
+        ></p
+      >
+      <p
+        >Classification data source:
+        <a
+          href="https://unstats.un.org/unsd/methodology/m49/overview/"
+          target="_blank"
+          >Standard country or area codes for statistical use (M49) by UN
+          Statistics Division</a
+        ></p
+      >
+    </footer>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>
